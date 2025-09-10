@@ -1,6 +1,6 @@
 # Clinical NLP Pipeline: From Weak Supervision to Emergency Triage
 
-A comprehensive end-to-end pipeline for extracting medical entities from clinical notes, training NER models through weak supervision, and implementing clinical decision support through ESI-based triage rules.
+An educational project implementing weak supervision for clinical NLP. Integrated labeling functions, BioClinicalBERT fine-tuning, and ESI-based triage rules. This project helped me understand modern NLP pipelines and their healthcare applications. Built with guidance from research papers and AI assistance.
 
 ## 🎯 Project Overview
 
