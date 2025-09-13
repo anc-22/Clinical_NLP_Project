@@ -1,0 +1,10 @@
+.DS_Store
+.ipynb_checkpoints/
+artifacts/
+data/
+notebook/ckpt/
+notebook/ner_checkpoints/
+notebook/model_ner_best/
+notebook/ds_ner_silver_with_idx/
+*.parquet
+*.joblib
