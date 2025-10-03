@@ -44,7 +44,6 @@ Created domain-specific labeling functions (LFs) that generate weak labels:
 - **Diagnosis LFs**: Flag critical findings, imaging results
 - **Treatment LFs**: Mark emergency treatments, specific medications
 
-Output: `lf_signals_index.parquet` containing boolean flags per note
 
 #### Span-Level Labels
 Generate silver NER training data through:
@@ -83,62 +82,6 @@ Implements Emergency Severity Index (ESI) classification:
 - Neurological emergency: focal weakness + laterality + acute presentation
 - Critical findings: hemorrhage/embolism + acute temporal pattern
 
-## 📁 Project Structure
-
-```
-project/
-├── data/
-│   ├── raw/           # Original augmented clinical notes
-│   ├── clean/         # Processed CSV files
-│   └── entities/      # Extracted entities
-├── artifacts/
-│   ├── models/        # Trained NER models
-│   ├── signals/       # Labeling function outputs
-│   └── triage/        # Triage alerts and diagnostics
-├── src/
-│   ├── preprocessing/ # Data cleaning scripts
-│   ├── labeling/      # Labeling functions
-│   ├── ner/           # NER training/inference
-│   └── triage/        # ESI rule engine
-└── notebooks/         # Analysis and examples
-```
-
-## 🚀 Usage
-
-### 1. Data Preprocessing
-```python
-# Clean and explode nested JSON structures
-python src/preprocessing/clean_clinical_notes.py
-
-# Generate entity tables from domain-specific data
-python src/preprocessing/create_entity_tables.py
-```
-
-### 2. Generate Training Data
-```python
-# Run labeling functions
-python src/labeling/run_labeling_functions.py
-
-# Create silver NER spans
-python src/labeling/create_silver_spans.py
-```
-
-### 3. Train NER Model
-```python
-# Fine-tune BioClinicalBERT
-python src/ner/train_ner.py --config configs/ner_config.yaml
-```
-
-### 4. Run Triage System
-```python
-# Generate triage alerts
-python src/triage/run_triage_alerts.py
-
-# Outputs:
-# - triage_alerts_top.csv: Highest priority alert per note
-# - triage_alerts_all.csv: All fired rules
-# - triage_diagnostics.xlsx: Detailed analytics
-```
 
 ## 📈 Evaluation & Results
 
